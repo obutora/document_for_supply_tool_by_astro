@@ -11,7 +11,7 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   integrations: [react(), tailwind(), mdx({
     remarkPlugins: [
-
     ]
-  })]
+  })],
+  site: 'https://obutora.github.io/'
 });
