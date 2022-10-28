@@ -27,7 +27,7 @@ jobs:
 
       # npmを使っていない場合、`npm ci`を`yarn install`や`pnpm i`に置き換えてください。
       - name: Install dependencies
-        run: npm ci
+        run: yarn install
 
       # npmを使っていない場合、`npm run build`を`yarn build`や`pnpm run build`に置き換えてください。
       - name: Build Astro
