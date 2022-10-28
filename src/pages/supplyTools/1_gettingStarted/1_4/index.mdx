@@ -1,0 +1,35 @@
+---
+layout: ../../../../layouts/supplyToolsLayout.astro
+title: 普段の発注をする方法
+---
+
+import FootNavigationCards from "../../../../components/footer/FootNavigationCards.astro";
+
+# 普段の発注をする方法
+
+## 事前準備
+
+CHOIS から**年間発注点設定.csv**, **入庫・出庫実績一覧.xls**を出力する
+
+- 詳しい方法は[CHOIS から必要なファイルを集める](./1_1)を参照してください。
+
+## ツールの操作
+
+必要に応じてフラグシートを手作業で更新  
+ツールシート ①→②→③ の順に処理し、作成された **【出力】発注点.csv** を CHOIS に取込む
+
+- 詳しい方法は[発注点設定ファイルを作成する](./1_3)を参照してください。
+
+## 発注
+
+CHOIS で以下の作業を行います
+
+1. バラ錠などは先に箱発注
+2. 発注>発注勧告 で発注点に従って発注
+
+<FootNavigationCards
+  preTitle="発注点設定ファイルを作成する"
+  preUrl={"../1_gettingStarted/1_3"}
+  postTitle={"さらに便利に使う方法"}
+  postUrl={"../2_basic"}
+/>

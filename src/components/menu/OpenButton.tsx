@@ -10,7 +10,7 @@ export const OpenButton = ({
   subPosts: MDXInstance<Record<string, any>>[];
 }) => {
   const [isOpenList, setIsOpenList] = useState(
-    Array.from({ length: posts.length }, () => false)
+    Array.from({ length: posts.length }, () => true)
   );
 
   return (
@@ -52,14 +52,16 @@ export const OpenButton = ({
           <section className="pl-4 border-l-2 ml-4">
             {subPosts && isOpenList[index] ? (
               subPosts
-                .filter((subpost) => subpost.url!.includes(post.url!))
+                .filter((subpost, index) => subpost.url!.includes(post.url!))
                 .map((subpost) => (
                   <div
                     key={subpost.url!}
                     className="animate__animated animate__faster animate__fadeInDown"
                   >
-                    <a href={subpost.url}>
-                      <li>{subpost.frontmatter.title}</li>
+                    <a href={subpost.url} className="">
+                      <li className="text-sm hover:text-sky-600 hover:font-semibold transition duration-300 antialiased">
+                        {subpost.frontmatter.title}
+                      </li>
                     </a>
                   </div>
                 ))

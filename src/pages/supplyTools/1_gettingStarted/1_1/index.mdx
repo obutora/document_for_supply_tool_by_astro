@@ -1,0 +1,54 @@
+---
+layout: ../../../../layouts/supplyToolsLayout.astro
+title: CHOISから必要なファイルを集める
+---
+
+import FootNavigationCards from "../../../../components/footer/FootNavigationCards.astro";
+import { Mermaid } from "../../../../components/Mermaid.tsx";
+
+# CHOIS から必要なファイルを集める
+
+ツールを使用するには**年間発注点設定.csv**と**入庫・出庫実績一覧.xls**の 2 つのファイルが必要です。  
+👇 の方法にしたがって用意しましょう。
+
+## 1.CHOIS から**年間発注点設定.csv**を出力する
+
+<Mermaid
+  client:load
+  src={`graph LR;
+A(CHOIS)-->B(発注)
+B --> C(年間発注点設定)
+C --> D(検索)
+D --> E(出力)
+E -->F(年間発注点設定.csv)
+`}
+  className={""}
+/>
+**年間発注点設定.csv**をわかる場所に保存しましょう
+
+## 2.CHOIS から**入庫・出庫実績一覧.xls**を出力する
+
+<Mermaid
+  client:load
+  src={`graph LR;
+A(CHOIS)-->B(入庫 出庫)
+B --> C(入庫出庫実績)
+C --> D(期間を指定)
+D --> E(払出出庫のみ選択)
+E --> F(検索)
+F --> G(印刷)
+G --> H(入庫出庫実績一覧.xls)
+`}
+  className={""}
+/>
+**入庫・出庫実績一覧.xls**をわかる場所に保存しましょう
+
+> ※ 計算に使用する期間に応じて 3~6 ヶ月程度を用意。件数が多い場合は、複数に分けて。  
+> ※ 入庫・出庫は出力でなく 『印刷』 を選択
+
+<FootNavigationCards
+  preTitle="基本の使用方法"
+  preUrl={"../1_gettingStarted"}
+  postUrl={"../1_gettingStarted/1_2"}
+  postTitle={"発注点の計算日数を設定する"}
+/>

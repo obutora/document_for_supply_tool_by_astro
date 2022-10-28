@@ -1,0 +1,29 @@
+---
+layout: ../../../../layouts/supplyToolsLayout.astro
+title: 発注点の計算日数を設定する
+---
+
+import FootNavigationCards from "../../../../components/footer/FootNavigationCards.astro";
+import { Mermaid } from "../../../../components/Mermaid.tsx";
+
+# 発注点の計算に使う日数を設定する
+
+> ※この項目はオプションのため、必ずしも変更する必要はありません。
+
+## ツールシートで日数を設定する
+
+<img src="../../../../1-2.png" />
+
+| 項目               | 詳細                                                                                              |
+| ------------------ | ------------------------------------------------------------------------------------------------- |
+| 通常発注点 日数    | 指定のない薬は何日分の出庫量にするか                                                              |
+| SME 発注点 日数    | SME（週 1 入庫）の薬は何日分の出庫量にするか                                                      |
+| 直近 n 日出庫 日数 | 比較用にのみ使用。直近の出庫は何日分の出庫量にするか<br/> ※使用中止フラグのアラートに使う         |
+| 算出利用期間       | 発注点の算出に利用する期間を指定<br/>※ すべて営業日計算。1 剤でも出庫があった日を営業日として扱う |
+
+<FootNavigationCards
+  preTitle="CHOISから必要なファイルを集める"
+  preUrl={"../1_gettingStarted/1_1"}
+  postTitle={"発注点設定ファイルを作成する"}
+  postUrl={"../1_gettingStarted/1_3"}
+/>

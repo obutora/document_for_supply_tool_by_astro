@@ -1,8 +1,39 @@
 ---
 layout: ../../../layouts/supplyToolsLayout.astro
-title: gettingStarted
+title: 基本の使用方法
 ---
 
-# Getting Started!
+import FootNavigationCards from "../../../components/footer/FootNavigationCards.astro";
+import { Mermaid } from "../../../components/Mermaid.tsx";
 
-my name is some student
+# 発注点ツールとは
+
+直近の発注データを利用し、毎日発注用に発注点を設定するためのツールです。
+
+このツールを利用することで以下のメリットがあります。
+
+> 毎日の発注時間を 15 分以下程度に抑えることが可能  
+> データに基づいて、過不足を防ぐことが可能  
+> SME やバラ品などを考慮した柔軟な発注点の設定が可能
+
+使用イメージは以下の通りです。
+
+<Mermaid
+  client:load
+  src={`graph LR;
+A(CHOIS)-->|ファイル出力|B(年間発注点設定.csv)
+A(CHOIS)-->|ファイル出力|C(入庫出庫実績一覧.xls)
+B --> D(発注点設定ツール)
+C --> D
+D --> |各種設定|E(発注点設定ファイル)
+E -->|発注点取り込み|F(CHOIS)
+F --> G(発注)`}
+  className={""}
+/>
+
+それでは早速、[発注点ツールを利用](./1_gettingStarted/1_1)してみましょう 🚀
+
+<FootNavigationCards
+  postTitle={"CHOISから必要なファイルを集める"}
+  postUrl={"./1_gettingStarted/1_1"}
+/>

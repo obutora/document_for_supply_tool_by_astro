@@ -52,7 +52,6 @@ console.log(subPosts[0].url);
         font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic",
           "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
           Meiryo, sans-serif;
-        @apply w-[100vw] h-[100vh] overflow-hidden;
       }
       code {
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
@@ -61,7 +60,7 @@ console.log(subPosts[0].url);
 
       body {
         -webkit-text-size-adjust: 100%;
-        @apply prose lg:prose-xl antialiased prose-zinc;
+        @apply prose lg:prose-lg xl:prose-xl antialiased prose-zinc;
       }
 
       header {
@@ -89,15 +88,42 @@ console.log(subPosts[0].url);
       }
 
       article {
-        @apply pt-12 pl-12 shrink-0;
+        @apply pt-12 px-8 block shrink-0 min-h-screen max-w-xl lg:max-w-4xl xl:max-w-6xl;
       }
 
       h1 {
         @apply font-bold;
       }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        @apply font-semibold text-zinc-700 text-ellipsis;
+      }
+
+      li {
+        @apply text-zinc-600 antialiased prose xl:prose-xl;
+      }
+
+      strong {
+        @apply font-semibold bg-sky-50 text-sky-700 px-2 py-1 rounded-lg mx-1 my-1 border-2 border-sky-100;
+      }
+
+      blockquote {
+        @apply bg-sky-50/60 mr-8 py-1 px-8 rounded-xl border-hidden shadow text-sky-600 font-semibold not-italic;
+      }
+
+      th {
+        @apply bg-sky-50 pt-4 pl-4 rounded-t-md text-sky-600;
+      }
+
+      td {
+        @apply pl-4;
+      }
 
       .sidebar {
-        @apply bg-zinc-100 w-[260px] h-screen shrink-0 pl-8 pt-4;
+        @apply bg-zinc-100 w-[300px] shrink-0 pl-8 pt-4;
       }
     </style>
   </body>

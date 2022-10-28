@@ -1,0 +1,26 @@
+---
+interface Props {
+    preUrl? : string;
+    preTitle? : string;
+    postUrl? : string;
+    postTitle? : string;
+}
+
+const { preTitle, preUrl, postTitle, postUrl } = Astro.props;
+---
+
+<div class="grid grid-cols-2 gap-4 mb-20 mt-8 px-8">
+  {preUrl ? <div>
+    <div class="border-2 border-sky-100 py-8 px-8 rounded-xl">
+        <label class="block text-sm mb-1">前の記事</label>
+        <a href={preUrl} class="no-underline font-semibold text-sky-500 hover:text-sky-600">👈 {preTitle}</a>
+    </div>
+    </div> : <></>}
+  {postUrl ? 
+  <div class="border-2 border-sky-100 py-8 px-8 rounded-xl">
+    <div>
+        <label class="block text-sm mb-1">次の記事</label>
+        <a href={postUrl} class="no-underline  font-semibold text-sky-500 hover:text-sky-600">{postTitle} 👉</a>
+        </div>
+    </div> : <></>}
+</div>
