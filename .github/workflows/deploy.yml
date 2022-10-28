@@ -31,7 +31,7 @@ jobs:
 
       # npmを使っていない場合、`npm run build`を`yarn build`や`pnpm run build`に置き換えてください。
       - name: Build Astro
-        run: npm run build
+        run: yarn build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
