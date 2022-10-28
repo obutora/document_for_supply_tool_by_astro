@@ -1,4 +1,6 @@
 ---
+import OpenButton from "../components/menu/OpenButton";
+
 export interface Props {
   title: string;
 }
@@ -24,26 +26,13 @@ console.log(subPosts[0].url);
     <title>{title}</title>
   </head>
   <body>
-    <header><div class="h-8 w-8 rounded-full bg-sky-600 mr-4"></div>発注点設定ツールマニュアル</header>
+    <header>
+      <div class="h-8 w-8 rounded-full bg-sky-600 mr-4">
+      </div>発注点設定ツールマニュアル
+    </header>
     <div class="flex gap-8">
       <div class="sidebar">
-        {
-          posts.map((post) => (
-            <div>
-              <aside>
-                <a href={post.url}>{post.frontmatter.title}</a></aside>
-              <section class="pl-4 border-l-2 ml-4">
-                {subPosts ? subPosts
-                  .filter((subpost) => subpost.url!.includes(post.url!))
-                  .map((subpost) => (
-                    <div>
-                      <a href={subpost.url}><li>{subpost.frontmatter.title}</li></a>
-                    </div>
-                  )) : <></>}
-              </section>
-            </div>
-          ))
-        }
+        <OpenButton client:load posts={posts} subPosts={subPosts} />
       </div>
       <article>
         <slot />
@@ -80,23 +69,23 @@ console.log(subPosts[0].url);
       }
 
       a {
-        @apply hover:text-sky-500 transition
+        @apply hover:text-sky-500 transition;
       }
 
-      aside { 
-        @apply mt-4 
+      aside {
+        @apply mt-4;
       }
 
       aside a {
-        @apply text-xl no-underline text-zinc-600 font-semibold tracking-wide hover:underline underline-offset-2 hover:text-sky-500 transition
+        @apply text-xl no-underline text-zinc-600 font-semibold tracking-wide hover:underline underline-offset-2 hover:text-sky-500 transition;
       }
 
       section a {
-        @apply no-underline text-zinc-600 text-lg
+        @apply no-underline text-zinc-600 text-lg;
       }
 
       section li {
-        @apply list-none
+        @apply list-none;
       }
 
       article {
