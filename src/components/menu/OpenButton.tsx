@@ -18,9 +18,7 @@ export const OpenButton = ({
       {posts.map((post, index) => (
         <div key={post.url! + index}>
           <aside className="flex gap-2 items-center">
-            <a href={`/document_for_supply_tool_by_astro${post.url}`}>
-              {post.frontmatter.title}
-            </a>
+            <a href={post.url}>{post.frontmatter.title}</a>
             <button
               className="scale-75 hover:bg-zinc-200 px-2 py-1 rounded-xl"
               onClick={() => {
@@ -60,10 +58,7 @@ export const OpenButton = ({
                     key={subpost.url!}
                     className="animate__animated animate__faster animate__fadeInDown"
                   >
-                    <a
-                      href={`/document_for_supply_tool_by_astro${subpost.url}`}
-                      className=""
-                    >
+                    <a href={subpost.url} className="">
                       <li className="text-sm hover:text-sky-600 hover:font-semibold transition duration-300 antialiased">
                         {subpost.frontmatter.title}
                       </li>

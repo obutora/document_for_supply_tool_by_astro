@@ -13,14 +13,14 @@ const { preTitle, preUrl, postTitle, postUrl } = Astro.props;
   {preUrl ? <div>
     <div class="border shadow shadow-blue-400/20 border-blue-200/80 py-8 px-8 rounded-xl">
         <label class="block text-sm mb-1">前の記事</label>
-        <a href={preUrl} class="no-underline font-semibold text-blue-600 hover:text-blue-700">👈 {preTitle}</a>
+        <a href={`/document_for_supply_tool_by_astro${preUrl}`} class="no-underline font-semibold text-blue-600 hover:text-blue-700">👈 {preTitle}</a>
     </div>
     </div> : <></>}
   {postUrl ? 
   <div class="border shadow shadow-blue-400/20 border-blue-200/80 py-8 px-8 rounded-xl">
     <div>
         <label class="block text-sm mb-1">次の記事</label>
-        <a href={postUrl} class="no-underline  font-semibold text-blue-600 hover:text-blue-700">{postTitle} 👉</a>
+        <a href={`/document_for_supply_tool_by_astro${postUrl}`} class="no-underline  font-semibold text-blue-600 hover:text-blue-700">{postTitle} 👉</a>
         </div>
     </div> : <></>}
 </div>
