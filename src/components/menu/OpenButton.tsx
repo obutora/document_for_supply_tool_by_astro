@@ -59,7 +59,7 @@ export const OpenButton = ({
                     className="animate__animated animate__faster animate__fadeInDown"
                   >
                     <a href={subpost.url} className="">
-                      <li className="text-sm hover:text-sky-600 hover:font-semibold transition duration-300 antialiased">
+                      <li className="text-sm hover:text-blue-600 hover:font-semibold transition duration-300 antialiased">
                         {subpost.frontmatter.title}
                       </li>
                     </a>

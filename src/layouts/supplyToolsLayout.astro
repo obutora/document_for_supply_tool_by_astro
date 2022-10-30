@@ -5,7 +5,7 @@ export interface Props {
   title: string;
 }
 
-const { title } = Astro.props;
+const { frontmatter } = Astro.props;
 const posts = await Astro.glob("../pages/supplyTools/*/*.mdx");
 const subPosts = await Astro.glob("../pages/supplyTools/*/*/*.mdx");
 // const posts = await Astro.glob("../pages/supplyTools/*.mdx");
@@ -23,13 +23,13 @@ console.log(subPosts[0].url);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{`発注点設定ツール | ${frontmatter.title}`}</title>
   </head>
   <body>
     <header>
       <a
         href="/document_for_supply_tool_by_astro/supplyTools/1_gettingStarted"
-        class="flex no-underline"
+        class="flex items-center no-underline"
       >
         <div
           class="h-8 w-8 rounded-full bg-gradient-to-br from-sky-600 to-indigo-700 mr-4"
@@ -82,7 +82,7 @@ console.log(subPosts[0].url);
       }
 
       a {
-        @apply hover:text-sky-500 transition;
+        @apply hover:text-blue-500 transition underline-offset-4;
       }
 
       aside {
@@ -90,7 +90,7 @@ console.log(subPosts[0].url);
       }
 
       aside a {
-        @apply text-xl no-underline text-zinc-600 font-semibold tracking-wide hover:underline underline-offset-2 hover:text-sky-500 transition;
+        @apply text-xl no-underline text-zinc-600 font-semibold tracking-wide hover:underline underline-offset-2 hover:text-blue-500 transition;
       }
 
       section a {
@@ -125,7 +125,7 @@ console.log(subPosts[0].url);
       }
 
       blockquote {
-        @apply bg-blue-50/60 mr-8 py-1 px-8 rounded-xl border-hidden shadow text-blue-600 font-semibold not-italic;
+        @apply mr-8 ml-4 py-0.5 px-8 antialiased rounded-md w-fit text-zinc-700 text-lg tracking-wider font-semibold not-italic border border-zinc-200;
       }
 
       th {
