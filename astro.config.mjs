@@ -13,5 +13,6 @@ export default defineConfig({
     remarkPlugins: [
     ]
   })],
-  site: 'https://obutora.github.io/'
+  site: 'https://obutora.github.io',
+  base: '/document_for_supply_tool_by_astro'
 });
