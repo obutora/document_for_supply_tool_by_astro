@@ -128,12 +128,20 @@ const subPosts = await Astro.glob("../pages/supplyTools/*/*/*.mdx");
         @apply mr-8 ml-4 py-0.5 px-8 antialiased rounded-md w-fit text-zinc-700 text-lg tracking-wider font-semibold not-italic border border-zinc-200;
       }
 
+      table {
+        @apply max-w-[90%]
+      }
+
       th {
-        @apply bg-blue-50 pt-4 pl-4 rounded-t-md text-blue-600;
+        @apply bg-blue-50 pt-4 pl-4 text-blue-600 text-sm;
+      }
+
+      tr {
+        @apply hover:bg-blue-50/60;
       }
 
       td {
-        @apply pl-4;
+        @apply pl-4 text-sm;
       }
 
       .sidebar {
