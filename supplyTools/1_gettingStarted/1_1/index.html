@@ -35,14 +35,14 @@ E --&gt;F(年間発注点設定.csv)
 <p><strong>年間発注点設定.csv</strong>をわかる場所に保存しましょう</p>
 <br/>
 <h2 id="2chois-から入庫出庫実績一覧xlsを出力する">2.CHOIS から<strong>入庫・出庫実績一覧.xls</strong>を出力する</h2>
-<astro-island uid="Z2tlEmD" component-url="/document_for_supply_tool_by_astro/Mermaid.e571af21.js" component-export="Mermaid" renderer-url="/document_for_supply_tool_by_astro/client.eeceaa77.js" props="{&quot;src&quot;:[0,&quot;graph LR;\nA(CHOIS)--&gt;B(入庫 出庫)\nB --&gt; C(入庫出庫実績)\nC --&gt; D(期間を指定)\nD --&gt; E(払出出庫のみ選択)\nsubgraph 間違いやすいので注意\nE\nend\nE --&gt; F(検索)\nF --&gt; G(印刷)\nG --&gt; H(入庫出庫実績一覧.xls)\n&quot;],&quot;className&quot;:[0,&quot;&quot;]}" ssr="" client="load" opts="{&quot;name&quot;:&quot;Mermaid&quot;,&quot;value&quot;:true}" await-children=""><div class="">graph LR;
+<astro-island uid="WQmPo" component-url="/document_for_supply_tool_by_astro/Mermaid.e571af21.js" component-export="Mermaid" renderer-url="/document_for_supply_tool_by_astro/client.eeceaa77.js" props="{&quot;src&quot;:[0,&quot;graph LR;\nA(CHOIS)--&gt;B(入庫 出庫)\nB --&gt; C(入庫 出庫伝票検索)\nC --&gt; D(出庫区分の 処方 のみ選択)\nsubgraph 入庫と間違いやすいので注意\nD\nend\nD --&gt; E(期間を指定)\nE --&gt; F(検索)\nF --&gt; G(印刷)\nG --&gt; H(入庫出庫実績一覧.xls)\n&quot;],&quot;className&quot;:[0,&quot;&quot;]}" ssr="" client="load" opts="{&quot;name&quot;:&quot;Mermaid&quot;,&quot;value&quot;:true}" await-children=""><div class="">graph LR;
 A(CHOIS)--&gt;B(入庫 出庫)
-B --&gt; C(入庫出庫実績)
-C --&gt; D(期間を指定)
-D --&gt; E(払出出庫のみ選択)
-subgraph 間違いやすいので注意
-E
+B --&gt; C(入庫 出庫伝票検索)
+C --&gt; D(出庫区分の 処方 のみ選択)
+subgraph 入庫と間違いやすいので注意
+D
 end
+D --&gt; E(期間を指定)
 E --&gt; F(検索)
 F --&gt; G(印刷)
 G --&gt; H(入庫出庫実績一覧.xls)
