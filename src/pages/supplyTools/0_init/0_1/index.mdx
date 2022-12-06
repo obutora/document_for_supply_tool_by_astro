@@ -1,0 +1,112 @@
+---
+layout: ../../../../layouts/supplyToolsLayout.astro
+title: フラグや包装の初期設定を行う
+---
+
+import TitleWithIcon from "../../../../components/TitleWithIcon.astro";
+import FootNavigationCards from "../../../../components/footer/FootNavigationCards.astro";
+import { Mermaid } from "../../../../components/Mermaid.tsx";
+
+# フラグや包装の初期設定を行う
+> 注意：事務用PCで動作しない報告があります。  
+> 仮想PCでは正常に動作確認できているため、  
+> 仮想PCでの実施を推奨します。
+
+Excelアイコンは、**発注点ツール**での操作  
+Edgeアイコンは、**CHOIS**での操作を表しています。
+
+
+<TitleWithIcon title={"1. 必要なデータを集める"} iconSrc={"../../../../document_for_supply_tool_by_astro/edge.png"} alt="edge icon" />
+<Mermaid
+  client:load
+  src={`graph LR;
+A(入庫出庫伝票検索)-->B(入庫全てにチェック)
+B --> C(検索)
+C --> D(検索)
+D --> E(印刷)
+subgraph ファイル出力と間違いやすいので注意
+D
+end
+E -->F(入庫出庫伝票検索.xls)
+`}
+  className={""}
+/>
+
+<TitleWithIcon title={"2. SMEフラグの設定"} iconSrc={"../../../../document_for_supply_tool_by_astro/excel.png"} alt="excel icon" />
+<Mermaid
+  client:load
+  src={`graph LR;
+A(フラグ用データ作成ボタン)-->B(入庫出庫伝票検索.xlsを選択)
+B --> C(SMEシートが表示される)
+`}
+  className={""}
+/>
+**SMEシート**のA列、B列を、発注点ツールの**フラグシート**にコピー  
+この作業でSMEフラグを設定することができます。
+
+> ヒント  
+発注点ツールへのデータのコピー後は、  
+新たにできた入庫出庫伝票検索_〇〇.xlsを**保存せず**に閉じてOK
+
+## 3.ファイルが正常に出力されたかチェック
+発注点ツールと同じフォルダに**重複JAN一覧.csv**が複数作成されていることを確認してください。  
+正しく**入庫データ整形ボタン**の処理ができていると、これらのファイルが作成されているはずです。   
+このファイルには、同一薬品で、複数の包装で入庫履歴があったものが20件ずつ分けて保存してあります。  
+以下の作業にて、さらにCHOISをつかって変換し、発注に使う包装を指定していきます。
+
+<TitleWithIcon title={"4. 包装JANの取得"} iconSrc={"../../../../document_for_supply_tool_by_astro/edge.png"} alt="edge icon" />
+<Mermaid
+  client:load
+  src={`graph TB;
+A(1.CHOIS)-->B( 2.発注入力)
+B --> C(3.ファイル取り込み)
+C --> D(4.重複JAN一覧を選択)
+D --> E(5.ファイル出力)
+E --> F(6.発注入力.csvを保存)
+F --> G(戻る)
+G --> |重複JAN一覧csvの数だけ繰り返す|B
+`}
+  className={""}
+/>
+
+保存した重複JAN一覧.csvについて上記作業を繰り返し、  
+全ての**発注入力_〇〇.csv**を発注点ツールと同じフォルダに格納する必要があります
+
+<TitleWithIcon title={"5. 発注に使う包装JANの選別"} iconSrc={"../../../../document_for_supply_tool_by_astro/excel.png"} alt="excel icon" />
+<Mermaid
+  client:load
+  src={`graph LR;
+A(発注ツール)-->B(複数JANの確認ボタン)
+B --> C(JANシートに移動)
+`}
+  className={""}
+/>
+各薬品のJANが並んでいます。  
+ここから、発注したいJANになるように、**要らない行を削除**してください。
+
+<TitleWithIcon title={"6. 発注に使う包装JANの設定"} iconSrc={"../../../../document_for_supply_tool_by_astro/excel.png"} alt="excel icon" />
+<Mermaid
+  client:load
+  src={`graph LR;
+A(発注ツール)-->B(発注用JAN指定ボタン)
+B --> C(発注点シートに移動)
+`}
+  className={""}
+/>
+**発注点シート**の発注用JANを確認して、未設定であれば  
+さきほど整理したJANシートからJANを設定する。  
+
+<TitleWithIcon title={"7. 発注に使う包装JANのチェック"} iconSrc={"../../../../document_for_supply_tool_by_astro/excel.png"} alt="excel icon" />
+発注点ツールの**JANシート**にて、推奨のJANに変更したい場合は手作業で書き換えます。  
+**JANシート**のG~J列に推奨のJANが表示されるので参考にしてください。  
+再設定を行いたいときは、再度発注用JANボタンを押してください。  
+  
+### おつかれさまでした！
+必要な初期設定の操作は以上になります。  
+次の**発注点の計算日数を設定する**は設定しなくても動作するため、  
+必要に応じて設定をお願いします。
+
+<FootNavigationCards
+  postTitle={"発注点の計算日数を設定する"}
+  postUrl={"/supplyTools/0_init/0_2"}
+/>
