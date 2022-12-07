@@ -49,7 +49,7 @@ export const OpenButton = ({
               </svg>
             </button>
           </aside>
-          <section className="pl-4 border-l-2 ml-4">
+          <section className="pl-2 border-l-2 ml-2">
             {subPosts && isOpenList[index] ? (
               subPosts
                 .filter((subpost, index) => subpost.url!.includes(post.url!))

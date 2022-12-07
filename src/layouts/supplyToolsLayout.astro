@@ -74,11 +74,11 @@ const subPosts = await Astro.glob("../pages/supplyTools/*/*/*.mdx");
 
       body {
         -webkit-text-size-adjust: 100%;
-        @apply prose lg:prose-lg xl:prose-xl antialiased prose-zinc;
+        @apply prose lg:prose-lg xl:prose-xl antialiased prose-zinc max-w-full;
       }
 
       header {
-        @apply h-20 flex items-center px-8 sticky w-screen text-zinc-700 bg-white font-bold tracking-wider border-b-2 border-zinc-200;
+        @apply h-20 flex items-center pl-8 max-w-full sticky w-screen text-zinc-700 bg-white font-bold tracking-wider border-b-2 border-zinc-200;
       }
 
       a {
@@ -102,7 +102,7 @@ const subPosts = await Astro.glob("../pages/supplyTools/*/*/*.mdx");
       }
 
       article {
-        @apply pt-12 px-8 block shrink-0 min-h-screen max-w-xl lg:max-w-4xl xl:max-w-6xl;
+        @apply py-12 px-8 block shrink-0 min-h-screen max-w-xl lg:max-w-3xl xl:max-w-5xl;
       }
 
       h1 {
