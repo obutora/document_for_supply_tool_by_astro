@@ -116,6 +116,10 @@ const subPosts = await Astro.glob("../pages/supplyTools/*/*/*.mdx");
         @apply font-semibold text-zinc-700 text-ellipsis;
       }
 
+      ul {
+        @apply border border-blue-50 shadow-sm rounded-md py-4;
+      }
+
       li {
         @apply text-zinc-600 antialiased prose xl:prose-xl;
       }
